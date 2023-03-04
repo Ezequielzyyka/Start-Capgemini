@@ -20,6 +20,11 @@ public class Main {
             
             System.out.println("Informe a idade do alulo: ");
             int idadeAluno = Integer.parseInt(scan.nextLine());
+            /*   pode ser feito assim:
+            
+            int idadeAluno = scan.nexInt();
+            scan.nexLine();        -Apaga o buff de teclado.
+            */
             
             System.out.println("O nome do aluno é: " + nomeAluno 
                     + " e sua idade é: " + idadeAluno + " anos");
