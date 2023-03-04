@@ -21,8 +21,8 @@ public class Main {
             System.out.println("Informe a idade do alulo: ");
             int idadeAluno = Integer.parseInt(scan.nextLine());
             
-            System.out.println("O nome do aluno é: " + nomeAluno 
-                    + " e sua idade é: " + idadeAluno + " anos");
+            System.out.println("O nome do aluno Ã©: " + nomeAluno 
+                    + " e sua idade Ã©: " + idadeAluno + " anos");
             
             totalAlunos--;        
         }
