@@ -13,8 +13,8 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
         
-        float valorA = 0;
-        float valorB = 0;
+        float valorA = 0.0f;
+        float valorB = 0.0f;
         char operacaoC;
         char desejaContinuar = 's';
         boolean verificador;

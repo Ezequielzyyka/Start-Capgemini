@@ -13,8 +13,8 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
-        float qtdHoraMes = 0;
-        float valorConta = 0;
+        float qtdHoraMes;
+        float valorConta = 0.0f;
         char entradaTipoCliente;
         String tipoCliente = "";
         char desejaContinuar = 's';
@@ -40,7 +40,7 @@ public class Main {
                         tipoCliente = "Residência";
                     }
                     case 'c','C' -> {
-                        valorConta =( qtdHoraMes * 0.48f);
+                        valorConta = qtdHoraMes * 0.48f;
                         verificador = true;
                         tipoCliente = "Comércio";
                     }

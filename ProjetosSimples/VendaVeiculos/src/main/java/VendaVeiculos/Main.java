@@ -13,9 +13,9 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
         float valorAPagar, valorInicial;
-        float valorDesconto = 0;
-        float totalDesconto = 0;
-        float totalVendas = 0;
+        float valorDesconto = 0.0f;
+        float totalDesconto = 0.0f;
+        float totalVendas = 0.0f;
         String veiculo;
         char entradaTipoCombustivel;
         String saidaTipoCombustivel = "";
