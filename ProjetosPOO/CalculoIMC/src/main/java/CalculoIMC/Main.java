@@ -16,10 +16,10 @@ public class Main {
         Pessoa pessoa = new Pessoa();
         
         System.out.println("Informe a altura. ");
-        pessoa.altura = scan.nextFloat();
+        pessoa.setAltura (scan.nextFloat());
         
         System.out.println("Informe o peso. ");
-        pessoa.peso = scan.nextFloat();
+        pessoa.setPeso (scan.nextFloat());
         
         System.out.println("IMC = " + pessoa.calcularIMC());
     }
