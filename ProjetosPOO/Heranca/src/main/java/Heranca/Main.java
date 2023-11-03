@@ -21,7 +21,7 @@ public class Main {
         System.out.println("Nome do vendedor - " + v.getNome());
         System.out.println("CPF - " + v.getCpf());
         System.out.println("Salário - R$ " + v.getSalario());
-        
+           
         Motorista m = new Motorista();
         m.setCategoriaCNH('A'); 
         m.setNome("André");
