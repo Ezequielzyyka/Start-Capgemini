@@ -14,7 +14,7 @@ public class BombaCombustivel {
     private float qtdCombustivel;
 
     public BombaCombustivel() {
-
+        
     }
 
     public void abastecerPorValor() {
@@ -23,7 +23,7 @@ public class BombaCombustivel {
         float qtdCombust;
 
         if (this.valorLitroCombust <= 0) {
-            System.out.println("Combustível sem especificação de presso! "
+            System.out.println("Combustível sem especificação de preço! "
                     + "\nPreço atual - " + this.tipoCombustivel + " - R$ " + this.valorLitroCombust);
 
         } else {
@@ -45,7 +45,7 @@ public class BombaCombustivel {
         float qtdCombust;
        
         if (this.valorLitroCombust <= 0) {
-            System.out.println("Combustível sem especificação de presso! "
+            System.out.println("Combustível sem especificação de preço! "
                     + "\nPreço atual - " + this.tipoCombustivel + " - R$ " + this.valorLitroCombust);
 
         } else {
@@ -119,7 +119,6 @@ public class BombaCombustivel {
     }
 
     public void setQtdCombustivel(float qtdCombustivel) {
-
         if (qtdCombustivel < 0) {
             System.out.println("Bomba não contem quantidade de combustível suficiente no reservatório! \n" + this.tipoCombustivel );
             System.out.println("Quntidade restante - " + getQtdCombustivel() + " litros. ");
