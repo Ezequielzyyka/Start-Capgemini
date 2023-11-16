@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author Ezequiel
  */
 public class Main {
-
+  
     
     public static void main(String[] args) {
 
@@ -35,82 +35,39 @@ public class Main {
                 case 'a','A','b','B','c','C','d','D' -> {
 
                     combustivel.alterarCombustivel();
-
-                    switch (menu) {
-
-                        case 'a','A' -> {
-
-                            if ("Álcool".equals(combustivel.getTipoCombustivel())) {
-                                alcool.setTipoCombustivel("Álcool");
-                                alcool.abastecerPorValor();
-
-                            } else if ("Gasolina".equals(combustivel.getTipoCombustivel())) {
-                                gasolina.setTipoCombustivel("Gasolina");
-                                gasolina.abastecerPorValor();
-
-                            } else {
-                                if ("Diesel".equals(combustivel.getTipoCombustivel())) {
-                                    diesel.setTipoCombustivel("Diesel");
-                                    diesel.abastecerPorValor();
-                                }
-                            }
-                        }
-                        case 'b','B' -> {
-
-                            if ("Álcool".equals(combustivel.getTipoCombustivel())) {
-                                alcool.setTipoCombustivel("Álcool");
-                                alcool.abasterPorLitro();
-
-                            } else if ("Gasolina".equals(combustivel.getTipoCombustivel())) {
-                                gasolina.setTipoCombustivel("Gasolina");
-                                gasolina.abasterPorLitro();
-
-                            } else {
-                                if ("Diesel".equals(combustivel.getTipoCombustivel())) {
-                                    diesel.setTipoCombustivel("Diesel");
-                                    diesel.abasterPorLitro();
-                                }
-                            }
-
-                        }
-                        case 'c','C' -> {
-
-                            if ("Álcool".equals(combustivel.getTipoCombustivel())) {
-                                alcool.setTipoCombustivel("Álcool");
-                                alcool.alterarQuantidadeCombustivel();
-
-                            } else if ("Gasolina".equals(combustivel.getTipoCombustivel())) {
-                                gasolina.setTipoCombustivel("Gasolina");
-                                gasolina.alterarQuantidadeCombustivel();
-
-                            } else {
-                                if ("Diesel".equals(combustivel.getTipoCombustivel())) {
-                                    diesel.setTipoCombustivel("Diesel");
-                                    diesel.alterarQuantidadeCombustivel();
-                                }
-                            }
-
-                        }
+                    
+                    if ("Álcool".equals(combustivel.getTipoCombustivel())) {
+                        alcool.setTipoCombustivel("Álcool");
                         
-                        case 'd','D' -> {
-                            if ("Álcool".equals(combustivel.getTipoCombustivel())) {
-                                alcool.setTipoCombustivel("Álcool");
-                                alcool.alterarValor();
-
-                            } else if ("Gasolina".equals(combustivel.getTipoCombustivel())) {
-                                gasolina.setTipoCombustivel("Gasolina");
-                                gasolina.alterarValor();
-
-                            } else {
-                                if ("Diesel".equals(combustivel.getTipoCombustivel())) {
-                                    diesel.setTipoCombustivel("Diesel");
-                                    diesel.alterarValor();
-                                }
-                            }
-                            
+                        switch (menu) {
+                            case 'a', 'A' -> alcool.abastecerPorValor();
+                            case 'b', 'B' -> alcool.abasterPorLitro();
+                            case 'c', 'C' -> alcool.alterarQuantidadeCombustivel();
+                            default ->       alcool.alterarValor();
                         }
 
+                    } else if ("Gasolina".equals(combustivel.getTipoCombustivel())) {
+                        gasolina.setTipoCombustivel("Gasolina");
+                        
+                        switch (menu) {
+                            case 'a', 'A' -> alcool.abastecerPorValor();
+                            case 'b', 'B' -> alcool.abasterPorLitro();
+                            case 'c', 'C' -> alcool.alterarQuantidadeCombustivel();
+                            default ->       alcool.alterarValor();
+                        }
+
+                    } else if ("Diesel".equals(combustivel.getTipoCombustivel())) {
+                        diesel.setTipoCombustivel("Diesel");
+                        
+                        switch (menu) {
+                            case 'a', 'A' -> alcool.abastecerPorValor();
+                            case 'b', 'B' -> alcool.abasterPorLitro();
+                            case 'c', 'C' -> alcool.alterarQuantidadeCombustivel();
+                            default ->       alcool.alterarValor();
+                        }                       
+               
                     }
+
                 }
                 default -> {
                     System.out.println("Opção inválida! ");
