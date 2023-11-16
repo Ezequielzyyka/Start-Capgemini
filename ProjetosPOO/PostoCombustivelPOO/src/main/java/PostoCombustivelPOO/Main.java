@@ -50,20 +50,20 @@ public class Main {
                         gasolina.setTipoCombustivel("Gasolina");
                         
                         switch (menu) {
-                            case 'a', 'A' -> alcool.abastecerPorValor();
-                            case 'b', 'B' -> alcool.abasterPorLitro();
-                            case 'c', 'C' -> alcool.alterarQuantidadeCombustivel();
-                            default ->       alcool.alterarValor();
+                            case 'a', 'A' -> gasolina.abastecerPorValor();
+                            case 'b', 'B' -> gasolina.abasterPorLitro();
+                            case 'c', 'C' -> gasolina.alterarQuantidadeCombustivel();
+                            default ->       gasolina.alterarValor();
                         }
 
                     } else if ("Diesel".equals(combustivel.getTipoCombustivel())) {
                         diesel.setTipoCombustivel("Diesel");
                         
                         switch (menu) {
-                            case 'a', 'A' -> alcool.abastecerPorValor();
-                            case 'b', 'B' -> alcool.abasterPorLitro();
-                            case 'c', 'C' -> alcool.alterarQuantidadeCombustivel();
-                            default ->       alcool.alterarValor();
+                            case 'a', 'A' -> diesel.abastecerPorValor();
+                            case 'b', 'B' -> diesel.abasterPorLitro();
+                            case 'c', 'C' -> diesel.alterarQuantidadeCombustivel();
+                            default ->       diesel.alterarValor();
                         }                       
                
                     }
