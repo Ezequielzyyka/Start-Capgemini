@@ -10,11 +10,12 @@ import java.util.Scanner;
 public class BombaCombustivel {
 
     private String tipoCombustivel;
-    private float valorLitroCombust = 0.0f;
+    private float valorLitroCombust;
     private float qtdCombustivel;
+    private char menu;
 
     public BombaCombustivel() {
-        
+
     }
 
     public void abastecerPorValor() {
@@ -33,6 +34,7 @@ public class BombaCombustivel {
             qtdCombust = this.qtdCombustivel - (valorAAbastecer / this.valorLitroCombust);
 
             setQtdCombustivel(qtdCombust);
+
             if (qtdCombust >= 0) {
                 System.out.println("Litros abastecidos - " + (valorAAbastecer / this.valorLitroCombust) + " litros");
             }
@@ -43,7 +45,7 @@ public class BombaCombustivel {
         Scanner scan = new Scanner(System.in);
         int qtdLitrosAbastecer;
         float qtdCombust;
-       
+
         if (this.valorLitroCombust <= 0) {
             System.out.println("Combustível sem especificação de preço! "
                     + "\nPreço atual - " + this.tipoCombustivel + " - R$ " + this.valorLitroCombust);
@@ -51,13 +53,12 @@ public class BombaCombustivel {
         } else {
             System.out.println("Informe a quantidade de litros a ser abastecido. ");
             qtdLitrosAbastecer = scan.nextInt();
-            
+
             qtdCombust = this.qtdCombustivel - qtdLitrosAbastecer;
-            
+
             setQtdCombustivel(qtdCombust);
+
             if (qtdCombust >= 0) {
-                
-                
                 System.out.println("Valor a pagar R$ " + (this.valorLitroCombust * qtdLitrosAbastecer));
             }
         }
@@ -87,8 +88,6 @@ public class BombaCombustivel {
                 scan.nextLine();
             }
         }
-        
-
     }
 
     public void alterarQuantidadeCombustivel() {
@@ -96,6 +95,30 @@ public class BombaCombustivel {
 
         System.out.println("Informe a quantidade que deseja abastecer o reservatório da bomba. ");
         setQtdCombustivel(scan.nextFloat() + this.qtdCombustivel);
+    }
+
+    public void mostrarMenu() {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("   Escolha uma opção.  ");
+        System.out.println("'A'- Abastecer por valor. ");
+        System.out.println("'B'- Abastecer por litros. ");
+        System.out.println("'C'- Reabastecer reservatório da bomba. ");
+        System.out.println("'D'- Alterar preço de combustível. ");
+        char opcaoMenu = scan.next().charAt(0);
+
+        this.menu = opcaoMenu;
+    }
+
+    public void escolherMenu() {
+        switch (this.menu) {
+            case 'a', 'A' -> abastecerPorValor();
+            case 'b', 'B' -> abasterPorLitro();
+            case 'c', 'C' -> alterarQuantidadeCombustivel();
+            case 'd', 'D' -> alterarValor();
+            default ->       System.out.println("Opção inválida! ");
+        }
+
     }
 
     public String getTipoCombustivel() {
@@ -120,16 +143,23 @@ public class BombaCombustivel {
 
     public void setQtdCombustivel(float qtdCombustivel) {
         if (qtdCombustivel < 0) {
-            System.out.println("Bomba não contem quantidade de combustível suficiente no reservatório! \n" + this.tipoCombustivel );
+            System.out.println("Bomba não contem quantidade de combustível suficiente no reservatório! \n" + this.tipoCombustivel);
             System.out.println("Quntidade restante - " + getQtdCombustivel() + " litros. ");
         } else if (qtdCombustivel > 10000) {
-            System.out.println("Reservatório da bomba não cabe essa quantidade de combustível! \n" 
+            System.out.println("Reservatório da bomba não cabe essa quantidade de combustível! \n"
                     + this.tipoCombustivel + "\nLimite máximo 10000 litros! ");
-            System.out.println("Quantidade existente no reservatório - " + getQtdCombustivel() +" litros. ");
+            System.out.println("Quantidade existente no reservatório - " + getQtdCombustivel() + " litros. ");
         } else {
             this.qtdCombustivel = qtdCombustivel;
         }
     }
-    
-    
+
+    public char getMenu() {
+        return menu;
+    }
+
+    public void setMenu(char menu) {
+        this.menu = menu;
+    }
+
 }
