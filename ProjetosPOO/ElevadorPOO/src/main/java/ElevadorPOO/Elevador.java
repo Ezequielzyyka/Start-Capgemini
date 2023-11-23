@@ -1,6 +1,8 @@
 
 package ElevadorPOO;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Ezequiel
@@ -11,6 +13,7 @@ public class Elevador {
     private int totalAndares;
     private int capacidadeElevador; 
     private int pessoasNoElevador;
+    private char menu;
     
     public Elevador() {
         
@@ -26,6 +29,7 @@ public class Elevador {
     public void entrar() {
         if (capacidadeElevador > pessoasNoElevador) {
             pessoasNoElevador++;
+            System.out.println("Pessoas no elevador - " + this.pessoasNoElevador);
         } else {
             System.out.println("Elevador já está com sua capacidade máxima. ");
         }
@@ -34,6 +38,7 @@ public class Elevador {
     public void sair() {
         if (pessoasNoElevador > 0) {
             pessoasNoElevador--;
+            System.out.println("Pessoas no elevador - " + this.pessoasNoElevador);
         } else {
             System.out.println("Elevador está vazio. ");
         }
@@ -45,6 +50,8 @@ public class Elevador {
         } else {
             System.out.println("Elevador está no último andar. ");
         }
+        
+        System.out.println("ANDAR - " + getAndarAtual());
     }
     
     public void descer() {
@@ -53,9 +60,25 @@ public class Elevador {
         } else {
             System.out.println("Elevador está no térreo. ");
         }
+        
+        System.out.println("ANDAR - " + getAndarAtual());
+    }
+    
+    public void menu() {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Escolha uma opção. ");
+        System.out.println("'A'- Entrar no elevador. ");
+        System.out.println("'B'- Sair do elevador. ");
+        System.out.println("'C'- Subir. ");
+        System.out.println("'D'- Descer. ");
+        this.menu = scan.next().charAt(0); 
     }
 
     public int getAndarAtual() {
+        if (this.andarAtual == 0) {
+            System.out.println("TÉRREO - ");
+        }
         return andarAtual;
     }
 
@@ -85,6 +108,14 @@ public class Elevador {
 
     public void setPessoasNoElevador(int pessoasNoElevador) {
         this.pessoasNoElevador = pessoasNoElevador;
+    }
+
+    public char getMenu() {
+        return menu;
+    }
+
+    public void setMenu(char menu) {
+        this.menu = menu;
     }
         
 }

@@ -28,7 +28,14 @@ public class Main {
             
             elevador.inicializar(capacidadeElevador, qtdAndaresPredio);
             
-            
+            elevador.menu();
+            switch (elevador.getMenu()) {
+                case 'a','A' -> elevador.entrar();
+                case 'b','B' -> elevador.sair();
+                case 'c','C' -> elevador.subir();
+                case 'd','D' -> elevador.descer();
+                default -> System.out.println("Opção inválida! ");
+            }
             
             do {
                 System.out.println("Deseja utilizar o elevador novamente? Tecle 'S'-SIM ou 'N'-FINALIZAR. ");
