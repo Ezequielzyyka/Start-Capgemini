@@ -27,8 +27,8 @@ public class Elevador {
     }
     
     public void entrar() {
-        if (capacidadeElevador > pessoasNoElevador) {
-            pessoasNoElevador++;
+        if (this.capacidadeElevador > this.pessoasNoElevador) {
+            this.pessoasNoElevador++;
             System.out.println("Pessoas no elevador - " + this.pessoasNoElevador);
         } else {
             System.out.println("Elevador já está com sua capacidade máxima. ");
@@ -36,8 +36,8 @@ public class Elevador {
     }
     
     public void sair() {
-        if (pessoasNoElevador > 0) {
-            pessoasNoElevador--;
+        if (this.pessoasNoElevador > 0) {
+            this.pessoasNoElevador--;
             System.out.println("Pessoas no elevador - " + this.pessoasNoElevador);
         } else {
             System.out.println("Elevador está vazio. ");
@@ -45,8 +45,8 @@ public class Elevador {
     }
     
     public void subir() {
-        if (totalAndares > andarAtual) {
-            andarAtual++;
+        if (this.totalAndares > this.andarAtual) {
+            this.andarAtual++;
         } else {
             System.out.println("Elevador está no último andar. ");
         }
@@ -55,8 +55,8 @@ public class Elevador {
     }
     
     public void descer() {
-        if (andarAtual > 0) {
-            andarAtual--;
+        if (this.andarAtual > 0) {
+            this.andarAtual--;
         } else {
             System.out.println("Elevador está no térreo. ");
         }
@@ -77,7 +77,7 @@ public class Elevador {
 
     public int getAndarAtual() {
         if (this.andarAtual == 0) {
-            System.out.println("TÉRREO - ");
+            System.out.println("TÉRREO ");
         }
         return andarAtual;
     }
