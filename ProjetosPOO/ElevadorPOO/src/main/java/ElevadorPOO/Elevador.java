@@ -46,23 +46,29 @@ public class Elevador {
     }
     
     public void subir() {
-        if (this.totalAndares > this.andarAtual) {
-            this.andarAtual++;
+        if (this.pessoasNoElevador == 0) {
+            System.out.println("Antes deve entrar no elevador. ");
         } else {
-            System.out.println("Elevador está no último andar. ");
+            if (this.totalAndares > this.andarAtual) {
+                this.andarAtual++;
+            } else {
+                System.out.println("Elevador está no último andar. ");
+            }
+            System.out.println("ANDAR - " + getAndarAtual());
         }
-        
-        System.out.println("ANDAR - " + getAndarAtual());
     }
     
     public void descer() {
-        if (this.andarAtual > 0) {
-            this.andarAtual--;
+        if (this.pessoasNoElevador == 0) {
+            System.out.println("Antes deve entrar no elevador. ");
         } else {
-            System.out.println("Elevador está no térreo. ");
+            if (this.andarAtual > 0) {
+                this.andarAtual--;
+            } else {
+                System.out.println("Elevador está no térreo. ");
+            }
+            System.out.println("ANDAR - " + getAndarAtual());
         }
-        
-        System.out.println("ANDAR - " + getAndarAtual());
     }
     
     public void menu() {
