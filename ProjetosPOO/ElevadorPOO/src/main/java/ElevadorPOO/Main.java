@@ -15,10 +15,10 @@ public class Main {
         Elevador elevador = new Elevador();
 
         int capacidadeElevador, qtdAndaresPredio;
-        char desejaContinuar = 's';
-        boolean verificador;
+        
+        elevador.setContinuar('s');          // Inicialica o atributo Continuar.
 
-        while (desejaContinuar == 's' || desejaContinuar == 'S') {
+        while (elevador.getContinuar() == 's' || elevador.getContinuar() == 'S') {
             System.out.println("Informe a capacidade de pessoas que o elevador suporta. ");
             capacidadeElevador = scan.nextInt();
 
@@ -27,7 +27,7 @@ public class Main {
 
             elevador.inicializar(capacidadeElevador, qtdAndaresPredio);
 
-            while (desejaContinuar == 's' || desejaContinuar == 'S') {
+            while (elevador.getContinuar() == 's' || elevador.getContinuar() == 'S') {
                 elevador.menu();
                 switch (elevador.getMenu()) {
                     case 'a','A' -> elevador.entrar();
@@ -37,32 +37,10 @@ public class Main {
                     default ->      System.out.println("Opção inválida! ");
                 }
 
-                do {
-                    System.out.println("Deseja utilizar o elevador novamente? Tecle 'S'-SIM ou 'N'-FINALIZAR. ");
-                    desejaContinuar = scan.next().charAt(0);
-
-                    switch (desejaContinuar) {
-                        case 's','S','n','N' -> verificador = true;
-                        default -> {
-                            System.out.println("Opção inválida! ");
-                            verificador = false;
-                        }
-                    }
-                } while (!verificador);
+                elevador.verificarContinuacao("Deseja utilizar o elevador novamente? Tecle 'S'-SIM ou 'N'-FINALIZAR. ");
             }
 
-            do {
-                System.out.println("Deseja utilizar um elevador de outro prédio? Tecle 'S'-SIM ou 'N'-FINALIZAR. ");
-                desejaContinuar = scan.next().charAt(0);
-
-                switch (desejaContinuar) {
-                    case 's','S','n','N' -> verificador = true;
-                    default -> {
-                        System.out.println("Opção inválida! ");
-                        verificador = false;
-                    }
-                }
-            } while (!verificador);
+            elevador.verificarContinuacao("Deseja utilizar um elevador de outro prédio? Tecle 'S'-SIM ou 'N'-FINALIZAR. ");
         }
 
     }

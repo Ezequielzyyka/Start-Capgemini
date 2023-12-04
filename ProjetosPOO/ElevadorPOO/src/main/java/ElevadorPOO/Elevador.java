@@ -14,6 +14,7 @@ public class Elevador {
     private int capacidadeElevador; 
     private int pessoasNoElevador;
     private char menu;
+    private char continuar;
     
     public Elevador() {
         
@@ -74,6 +75,25 @@ public class Elevador {
         System.out.println("'D'- Descer. ");
         this.menu = scan.next().charAt(0); 
     }
+    
+    public void verificarContinuacao(String perguntaContinuacao) {
+        Scanner scan = new Scanner(System.in);
+        
+        boolean verificador;
+        do {
+            System.out.println(perguntaContinuacao);
+            this.continuar = scan.next().charAt(0);
+
+            switch (this.continuar) {
+                case 's','S','n','N' -> verificador = true;
+                default -> {
+                    System.out.println("Opção inválida! ");
+                    verificador = false;
+                }
+            }
+        } while (!verificador);
+     
+    }
 
     public int getAndarAtual() {
         if (this.andarAtual == 0) {
@@ -116,6 +136,14 @@ public class Elevador {
 
     public void setMenu(char menu) {
         this.menu = menu;
+    }
+
+    public char getContinuar() {
+        return continuar;
+    }
+
+    public void setContinuar(char continuar) {
+        this.continuar = continuar;
     }
         
 }
