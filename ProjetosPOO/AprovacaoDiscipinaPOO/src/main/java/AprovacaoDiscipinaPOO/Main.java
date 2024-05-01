@@ -13,10 +13,30 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
         
-        Aluno aluno1 = new Aluno();
+        Aluno aluno = new Aluno();
+                
+        char continuar = 's';
+        boolean verificador;
         
-        aluno1.informarDados();
-        aluno1.mostrarDados();
+        while (continuar == 's' || continuar == 'S'){
+            aluno.informarDados();
+            aluno.mostrarDados();
+            
+            do{
+                System.out.println("Deseja fazer outra operação? Digite 'S'- SIM ou 'N'- NÃO: ");
+                continuar = scan.next().charAt(0);
+                
+                switch (continuar) {
+                    case 's','S','n','N' -> verificador = true;
+                    default -> {
+                        System.out.println("Opção inválida! ");
+                        verificador = false;
+                    }
+                }
+                
+            } while (!verificador);
+            
+        } 
     }
     
 }
